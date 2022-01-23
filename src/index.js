@@ -3,20 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Leaderboard from './Leaderboard/Leaderboard';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="leaderboard" element={<Leaderboard />} />
-    </Routes>
-  </BrowserRouter>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 
