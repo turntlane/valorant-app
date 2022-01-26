@@ -79,12 +79,12 @@ function PlayerSearch() {
   };
 
   return (
-    <div className="app">
+    <div className="app mt-4 mx-auto">
       <div>
         <div className="container">
           <input
             type="text"
-            className="col-md-12 input"
+            className="col-md-6 mx-auto input"
             onChange={(e) => onChangeHandler(e.target.value)}
             value={text}
           />
@@ -92,7 +92,7 @@ function PlayerSearch() {
             suggestions.map((suggestion, i) => (
               <div
                 key={i}
-                className="suggestion col-md-12 justify-content-md-center"
+                className="suggestion col-md-6 justify-content-md-center"
                 onClick={() => onSuggestHandler(suggestion)}
               >
                 {suggestion}
