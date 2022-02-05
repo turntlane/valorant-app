@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 function Home() {
   return <div>
-      <h1 className='ml-5'>Valorant Tracker</h1>
+      {/* <h1 className='ml-5'>Valorant Tracker</h1> */}
   </div>;
 }
 
