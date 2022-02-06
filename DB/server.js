@@ -29,6 +29,18 @@ app.get('/playerinfo', async (req, res) => {
     }
 })
 
+app.get('/players', async (req, res) => {
+    try {
+        const {name} = req.query;
+        const allPlayers = await pool.query("SELECT * FROM player_info WHERE player_name || ' ' || player_mouse ILIKE $1", [`%${name}%`]);
+        res.json(allPlayers.rows)
+    }
+    catch (err) {
+        console.error(err.message)
+    }
+})
+
+
 
 
 app.listen(5000, () => {

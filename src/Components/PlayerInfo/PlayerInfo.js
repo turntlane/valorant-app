@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ShowPlayerInfo from './ShowPlayerInfo';
 
 function PlayerInfo() {
     const [player_name, setName] = useState('')
@@ -9,11 +8,19 @@ function PlayerInfo() {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        let FormData = {player_name, player_mouse};
-        await axios.post('http://localhost:5000/playerinfo', FormData)
-        setName('')
-        setMouse('')
+        // e.preventDefault();
+        try {
+            e.preventDefault()
+            let FormData = {player_name, player_mouse};
+            await axios.post('http://localhost:5000/playerinfo', FormData)
+            alert('user created')
+            setName('')
+            setMouse('')
+        }
+        catch(err) {
+            alert('Error adding user')
+            console.error(err.message)
+        }
         
     }
 

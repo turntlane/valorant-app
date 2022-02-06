@@ -14,6 +14,7 @@ function Header() {
         <Nav.Link as={Link} to='/'>Home</Nav.Link>
         <Nav.Link as={Link} to='/leaderboard'>Leaderboard</Nav.Link>
         <Nav.Link as={Link} to='/playersearch'>Player Search</Nav.Link>
+        <Nav.Link as={Link} to='/playerinfo'>Player Info</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
