@@ -48,6 +48,7 @@ function PlayerSearch() {
 
   const onSuggestHandler = async (text) => {
     setText(text);
+    console.log('broski')
     console.log(text);
     const firstHalf = text.split("#")[0];
     const secondHalf = text.split("#")[1];

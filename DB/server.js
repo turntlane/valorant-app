@@ -9,8 +9,8 @@ app.use(express.json())
 
 app.post('/playerinfo', async (req, res) => {
     try {
-        const {player_name, player_mouse} = req.body;
-        const newPlayer = await pool.query("INSERT INTO player_info ( player_name, player_mouse) VALUES($1, $2) RETURNING *", [player_name, player_mouse])
+        const {player_name, player_mouse, player_sensitivity} = req.body;
+        const newPlayer = await pool.query("INSERT INTO player_info ( player_name, player_mouse, player_sensitivity) VALUES($1, $2, $3) RETURNING *", [player_name, player_mouse, player_sensitivity])
         res.json(newPlayer.rows[0])
     }
     catch(err) {
