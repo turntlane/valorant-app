@@ -1,0 +1,77 @@
+/* Linear gradiant */
+:root {
+	--background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  --first: rgb(255, 217, 0);
+  --second: #4553ff;
+  --third: #4f40ff;
+  --fourth: #25ddf5;
+  --fifth: #1fa2ff;
+}
+
+.stripes {
+  margin-top: -8rem;
+  opacity: 0.9;
+  z-index: -100;
+  width: 100%;
+  height: 35vw;
+  background: var(--background);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+#stripes span:nth-child(1) {
+  grid-column: span 1;
+  background: var(--first);
+  animation: gradient 15s ease infinite;
+}
+
+#stripes span:nth-child(2) {
+  grid-column: span 2;
+  background: var(--second);
+  animation: gradient 15s ease infinite;
+}
+
+#stripes span:nth-child(3) {
+  grid-column: span 2;
+  background: var(--third);
+  animation: gradient 15s ease infinite;
+}
+
+#stripes span:nth-child(4) {
+  grid-column: 6;
+  grid-row: 3;
+  background: var(--fourth);
+  animation: gradient 15s ease infinite;
+}
+
+#stripes span:nth-child(5) {
+  grid-column: span 2;
+  grid-row: 4;
+  background: var(--fifth);
+  animation: gradient 15s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+/* Title */
+
+.home-title {
+    margin-left: 4.5rem;
+}

@@ -7,7 +7,7 @@ function ShowPlayerInfo() {
   const [text, setText] = useState("");
   const [mouse, setMouse] = useState("");
   const [sens, setSens] = useState("");
-  const [data, setData] = useState("");
+  const [name, setName] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ function ShowPlayerInfo() {
       matches = users.filter((user) => {
         const regex = new RegExp(`${text}`, "gi");
         return user.match(regex);
+        
       });
     }
     console.log(`matches`, matches);
@@ -34,14 +35,15 @@ function ShowPlayerInfo() {
 
   const onSuggestHandler = async (text) => {
     setText(text);
+    setName(text)
     console.log(text);
     await axios
-      .get(`http://localhost:5000/players?name=${text}`)
-      .then((res) => {
-        setMouse(res.data.map((d) => d.player_mouse));
-        setSens(res.data.map((d) => d.player_sensitivity));
-      });
-      
+    .get(`http://localhost:5000/players?name=${text}`)
+    .then((res) => {
+      setMouse(res.data.map((d) => d.player_mouse));
+      setSens(res.data.map((d) => d.player_sensitivity));
+    });
+    
     setSuggestions([]);
   };
 
@@ -50,7 +52,6 @@ function ShowPlayerInfo() {
       <div>
         <div className="container">
           <input
-            type="text"
             className="col-md-6 mx-auto input"
             onChange={(e) => onChangeHandler(e.target.value)}
             value={text}
@@ -59,14 +60,14 @@ function ShowPlayerInfo() {
             suggestions.map((suggestion, i) => (
               <div
                 key={i}
-                data-value={suggestion.player_mouse}
                 className="suggestion col-md-6 justify-content-md-center"
                 onClick={() => onSuggestHandler(suggestion)}
+              
               >
                 {suggestion}
               </div>
             ))}
-          <PlayerInfoCard text={text} mouse={mouse} sens={sens} />
+          <PlayerInfoCard playerName={name} mouse={mouse} sens={sens} />
         </div>
       </div>
     </div>

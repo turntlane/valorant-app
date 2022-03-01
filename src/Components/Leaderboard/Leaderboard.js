@@ -22,12 +22,11 @@ function Leaderboard() {
 
   return (
     <div className="container d-flex flex-column mt-5">
-      <ol>
         {name.slice(0, 20).map((n, i) => (
           <li key={i}>
             <button
               onClick={getData}
-              className="btn  btn-dark text-left mb-3"
+              className="btn  btn-dark text-left mb-3 w-25 text-center"
             >
               {n.gameName} |{" "}
               <span>
@@ -41,7 +40,6 @@ function Leaderboard() {
             </button>
           </li>
         ))}
-      </ol>
       {/* <Link to="/">Player Search</Link> */}
     </div>
   );

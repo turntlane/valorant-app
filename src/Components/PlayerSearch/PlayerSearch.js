@@ -102,11 +102,6 @@ function PlayerSearch() {
         </div>
       </div>
       <PlayerCard text={text} level={level} elo={elo} rank={rank} image={image}/>
-      {/* {text ? <h1>{text}</h1> : null}
-      {level ? <h3>Level: {level}</h3> : null}
-      {rank ? <h3>Rank: {rank}</h3> : null}
-      {elo ? <h3>Elo: {elo}</h3> : null}
-      {image ? <img src={image} alt="idk" /> : null} */}
       <Link to="leaderboard">Leaderboard</Link>
     </div>
   );

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-<Navbar bg="light" expand="lg">
+<Navbar style={{zIndex: '100'}} bg="transparent" expand="lg">
   <Container>
     <Navbar.Brand as={Link} to='/'>React-Bootstrap</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
