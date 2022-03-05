@@ -1,23 +1,12 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import Leaderboard from "../Leaderboard/Leaderboard";
+import HomeContent from "./HomeContent";
 
 function Home() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   return (
     <div>
-    <div style={{zIndex: '500'}} className="wrapper">
-      <div className="body">
-        <h1 className="home-title" data-aos={"fade-up"}>
-          Valorant Tracker
-        </h1>
-      </div>
-    </div>
       <div className="stripes">
         <span></span>
         <span></span>
@@ -25,6 +14,7 @@ function Home() {
         <span></span>
         <span></span>
       </div>
+      <HomeContent />
     </div>
   );
 }

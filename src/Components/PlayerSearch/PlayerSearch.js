@@ -4,6 +4,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PlayerCard from "./PlayerCard/PlayerCard";
+import "./PlayerSearch.css"
 
 function PlayerSearch() {
   const [level, setLevel] = useState("");
@@ -89,6 +90,7 @@ function PlayerSearch() {
             onChange={(e) => onChangeHandler(e.target.value)}
             value={text}
           />
+          <div className="dropdown">
           {suggestions &&
             suggestions.map((suggestion, i) => (
               <div
@@ -96,9 +98,11 @@ function PlayerSearch() {
                 className="suggestion col-md-6 justify-content-md-center"
                 onClick={() => onSuggestHandler(suggestion)}
               >
+                
                 {suggestion}
-              </div>
+                </div>
             ))}
+            </div>
         </div>
       </div>
       <PlayerCard text={text} level={level} elo={elo} rank={rank} image={image}/>

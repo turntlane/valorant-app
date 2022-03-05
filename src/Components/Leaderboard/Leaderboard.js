@@ -1,13 +1,16 @@
 import { React, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import data from "../../data";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./Leaderboard.css"
 
 function Leaderboard() {
   const [name, setName] = useState([]);
   const [rank, setRank] = useState([]);
 
   useEffect(() => {
+    AOS.init();
     axios
       .get(`https://api.henrikdev.xyz/valorant/v2/leaderboard/na`)
       .then((res) => {
@@ -22,11 +25,12 @@ function Leaderboard() {
 
   return (
     <div className="container d-flex flex-column mt-5">
-        {name.slice(0, 20).map((n, i) => (
-          <li key={i}>
+        {name.slice(0, 10).map((n, i) => (
+          <li className="leaderboard-list" key={i}>
             <button
+            data-aos={"fade-right"}
               onClick={getData}
-              className="btn  btn-dark text-left mb-3 w-25 text-center"
+              className="btn btn-dark text-left mb-3 w-25 text-center"
             >
               {n.gameName} |{" "}
               <span>
