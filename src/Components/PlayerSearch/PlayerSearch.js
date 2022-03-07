@@ -14,6 +14,7 @@ function PlayerSearch() {
   const [users, setUsers] = useState([]);
   const [text, setText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [playerName, setPlayerName] = useState('')
 
   const [mmr, setMmr] = useState("");
   const [rank, setRank] = useState("");
@@ -49,12 +50,9 @@ function PlayerSearch() {
 
   const onSuggestHandler = async (text) => {
     setText(text);
-    console.log('broski')
-    console.log(text);
+    setPlayerName(text)
     const firstHalf = text.split("#")[0];
     const secondHalf = text.split("#")[1];
-    console.log(firstHalf);
-    console.log(secondHalf);
 
     await axios
       .get(
@@ -105,7 +103,7 @@ function PlayerSearch() {
             </div>
         </div>
       </div>
-      <PlayerCard text={text} level={level} elo={elo} rank={rank} image={image}/>
+      <PlayerCard playerName={playerName} level={level} elo={elo} rank={rank} image={image}/>
       <Link to="leaderboard">Leaderboard</Link>
     </div>
   );

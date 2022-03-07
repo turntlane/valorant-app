@@ -1,5 +1,9 @@
 .dropdown {
     max-height: 100px;
-    background-color: aqua;
     overflow: scroll;
+}
+
+.suggestion:hover {
+    cursor: pointer;
+    background-color: rgba(53, 53, 53, 0.488);
 }

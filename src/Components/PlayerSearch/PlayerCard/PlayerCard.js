@@ -1,9 +1,9 @@
 import React from "react";
 
-function PlayerCard({ text, level, rank, elo, image }) {
+function PlayerCard({ playerName, level, rank, elo, image }) {
   return (
     <div>
-      {text ? <h1>{text}</h1> : null}
+      {image ? <h1>{playerName}</h1> : null}
       <h3>{level}</h3>
       <h3>{rank}</h3>
       <h3>{elo}</h3>
