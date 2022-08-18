@@ -8,7 +8,7 @@ import Header from "./Components/Navbar/Header";
 import Bundles from "./Components/Bundles/Bundles";
 import PlayerInfo from "./Components/PlayerInfo/PlayerInfo";
 import ShowPlayerInfo from "./Components/PlayerInfo/ShowPlayerInfo";
-import Register from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
