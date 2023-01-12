@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Leaderboard from "../Leaderboard/Leaderboard";
 import HomeContent from "./HomeContent";
 import Loader from "../Loading/Loader";
 
-function Home() {
+function Home({ setAuth }) {
   return (
     <div>
       <div className="stripes">
@@ -14,7 +14,7 @@ function Home() {
         <span></span>
         <span></span>
       </div>
-      <HomeContent />
+      <HomeContent setAuth={setAuth} />
     </div>
   );
 }
